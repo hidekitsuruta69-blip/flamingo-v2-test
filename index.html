@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="flamingo-pages" content="test">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FLAMINGO ONLINE 商品管理 Ver.2.0</title>
+<link rel="stylesheet" href="./style.css">
+<script defer src="./vendor/tesseract.min.js"></script>
+<script type="module" src="./app.js"></script>
+</head>
+<body>
+<header><div class="frame mast">
+  <a class="brand" href="#home"><strong>FLAMINGO ONLINE</strong><span>商品管理 Ver.2.0</span></a>
+  <a class="home" href="#home">ホーム</a>
+</div></header>
+<main class="frame">
+  <p class="notice" id="store">ダミーテスト</p>
+  <div class="panel" id="demo" hidden>
+    <label for="demo-store">ローカル試験の店舗</label>
+    <select id="demo-store"><option value="sendai">仙台</option><option value="fukuoka">福岡</option><option value="3rd">3rd</option></select>
+  </div>
+  <section class="panel" id="pages-connect" hidden>
+    <form id="pages-connect-form">
+      <label for="gas-url">新規テスト用GASの /exec URL</label>
+      <input id="gas-url" type="url" required autocomplete="off" spellcheck="false">
+      <button id="google-connect">Googleで接続</button>
+    </form>
+  </section>
+  <p id="message" role="status" hidden></p>
+  <p id="csv-ready" hidden><a class="button" id="csv-download">CSVをダウンロード</a></p>
+  <h1 id="title">読み込み中…</h1>
+  <section id="camera-panel" class="panel" hidden>
+    <div class="actions"><button id="start">開始</button><button id="pause" disabled>一時停止</button>
+      <button id="rescan" disabled>直前を再SCAN</button><button id="stop" disabled>終了</button></div>
+    <p id="camera-status" role="status"></p>
+    <button id="ocr-test" class="secondary" hidden>ダミー画像でOCRを確認</button>
+    <p id="ocr-test-result" role="status" hidden></p>
+    <div id="preview" hidden><video id="video" playsinline muted></video><div class="reticle"></div></div>
+    <canvas id="motion" hidden></canvas><canvas id="ocr" hidden></canvas>
+    <ul id="scan-list"></ul>
+    <button id="save-scan" disabled>読み取り履歴を蓄積</button>
+  </section>
+  <section id="screen"></section>
+</main>
+</body>
+</html>
